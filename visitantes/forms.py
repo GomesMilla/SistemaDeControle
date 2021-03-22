@@ -5,4 +5,7 @@ class VisitanteForm(forms.ModelForm):
     
     class Meta:
         model = visitante
-        fields = "__all__"
+        fields = (
+            "nome_completo", "cpf", "email_morador", 
+            "data_nascimento", "numero_da_casa", "morador"
+        )
