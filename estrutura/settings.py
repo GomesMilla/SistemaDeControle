@@ -44,6 +44,9 @@ INSTALLED_APPS += [
     'porteiros',
     'visitantes'
 ]
+INSTALLED_APPS += [
+    'widget_tweaks',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
