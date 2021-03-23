@@ -10,6 +10,33 @@ class VisitanteForm(forms.ModelForm):
             "data_nascimento", "numero_da_casa", "morador"
         )
 
+        error_messages = {
+            "nome_completo":{
+                "required": "Nome completo do visitante é obrigatório!"
+            },
+            "cpf":{
+                "required": "CPF é obrigatório para fins de identificação!"
+            },
+            "email_morador":{
+                "required": "E-mail do visitante é obrigatório para fins de contato, caso haja algum problema!",
+                "invalid": "Insira um email válido! Ex: adalovelace@gmail.com"
+            },
+            "data_nascimento":{
+                "required": "Data de nascimento é obrigatório!",
+                "invalid": "Por favor, insira em um formato válido (DD/MM/AAAA)"
+            },
+            "numero_da_casa":{
+                "required": "Número da casa é obrigatório para fins de identificação!"
+            },
+            "morador":{
+                "required": "Nome do morador que deseja visitar é obrigatório para fins de segurança!"
+            }
+            
+        }
+
+
+        
+
         #NESSE FIELDS, ANTES ESTAVA DIZENDO "__ALL__", ISSO SIGNIFICA QUE IRÁ APARECER NO FORMULÁRIO DE UM NOVO VISITANTE PARA
         #PREENCHER, TODAS AS INFORMAÇÕES QUE NÓS CADASTRAMOS DESDE NOME A HORA DE SAÍDA.
 
