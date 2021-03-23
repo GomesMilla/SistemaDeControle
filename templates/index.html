@@ -100,6 +100,8 @@
                         <th>Horário da saída</th>
                         <th>Morador responsavél</th>
                         <th>E-mail do visitante</th>
+                        <th>Quem deseja visitar</th>
+                    
                         <th>Autorizado por</th>
                         <th>Mais informações</th>
                     </thead>
@@ -108,12 +110,13 @@
                         {% for visitante in todos_visitantes%}
                         <tr>
                             <td>{{visitante.nome_completo}}</td>
-                            <td>{{visitante.cpf}}</td>
+                            <td>{{visitante.id}}</td>
                             <td>{{visitante.horario_de_entrada}}</td>
                             <td>{{visitante.horario_altorizacao}}</td>
                             <td>{{visitante.horario_da_saida}}</td>
                             <td>{{visitante.morador}}</td>
-                            <td>{{visitante.email_morador}}</td>
+                            <td>{{visitante.email_morador}}</td>      
+                            <td>{{visitante.visitar|default_if_none:"Cadastrado antes da atualização"}}</td>
                             <td>{{visitante.registrado_por}}</td>
                             <td>
                                 <a href="#">

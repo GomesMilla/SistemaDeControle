@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from visitantes.models import visitante
+from visitantes.models import Visitante
 #Mostrar no navegador o que é que foi escolhido
 #def index(request):
 #return HttpResponse("Ola mundo! Camila Adriana")
@@ -7,7 +7,7 @@ from visitantes.models import visitante
 
 def index(request):
 	
-	todos_visitantes = visitante.objects.all 
+	todos_visitantes = Visitante.objects.all
 
 	context = {
 		"nome_pagina": "Início da dashboard",

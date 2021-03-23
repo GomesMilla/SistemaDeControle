@@ -1,13 +1,13 @@
 from django import forms
-from visitantes.models import visitante
+from visitantes.models import Visitante
 
 class VisitanteForm(forms.ModelForm):
     
     class Meta:
-        model = visitante
+        model = Visitante
         fields = (
             "nome_completo", "cpf", "email_morador", 
-            "data_nascimento", "numero_da_casa", "morador"
+            "data_nascimento", "numero_da_casa", "morador", "visitar",
         )
 
         error_messages = {
@@ -28,9 +28,11 @@ class VisitanteForm(forms.ModelForm):
             "numero_da_casa":{
                 "required": "Número da casa é obrigatório para fins de identificação!"
             },
-            "morador":{
+            "visitar":{
                 "required": "Nome do morador que deseja visitar é obrigatório para fins de segurança!"
             }
+            
+
             
         }
 
